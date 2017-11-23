@@ -1,2 +1,26 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div>
+  <%= render 'shared/banner' %>
+</div>
+<div class="container">
+  <% @cocktails.each do |cocktail| %>
+    <li class="cocktail-list">
+      <h2 style= "display: inline"><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
+      <div class="toolbar">
+        <%= cocktail.doses.size %> ingredients
+         |
+        <%= link_to edit_cocktail_path(cocktail) do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          Add a dose
+        <% end %>
+        |
+        <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+          Delete
+        <% end %>
+      </div>
+      <div class="content-txt">
+      </div>
+    </li>
+  <% end %>
+  <div><%= link_to "Add a new cocktail", new_cocktail_path, class:'btn btn-primary' %></div>
+</div>

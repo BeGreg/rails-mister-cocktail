@@ -1,16 +1,14 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-    <div>
-      <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "https://s3.amazonaws.com/dix30/wp-content/uploads/2014/12/picto-nocturnes.png" %>
-      <% end %>
-      Mister Cocktail
-    </div>
+  <%= link_to "Yelp", root_path, class: "navbar-wagon-brand" %>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
     <!-- Links -->
-    <%= link_to "Cocktail list", cocktails_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "New cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Home", restaurants_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "New restaurant", new_restaurant_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
     </div>
   </div>
 
